@@ -53,6 +53,8 @@ bool SqInsertAt (struct sq_list* ll, SQ_ELEM_TYPE val, int pos) {
         ll->data[i+1] = ll->data[i];
 
     ll->data[pos] = val;
+    ll->tail++;
+    return true;
 }
 
 int SqIndex (struct sq_list* ll, SQ_ELEM_TYPE val) {
@@ -98,6 +100,10 @@ int main () {
     }
 
     SqInsertAt(list0,114514,3);
+
+    SqInsertAt(list0,114514,0);
+
+    SqInsertAt(list0,114514,list0->tail);
 
     SqPrint(list0);
 
