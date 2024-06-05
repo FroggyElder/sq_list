@@ -79,7 +79,7 @@ bool SqDeleteByVal (struct sq_list* ll,SQ_ELEM_TYPE val) {
 }
 
 bool SqDeleteByIndex (struct sq_list* ll,int index) {
-    if (ll==NULL) return false;
+    if (ll==NULL||index>=ll->tail||index<0) return false;
     for (int i=index;i<ll->tail-1;i++)
         ll->data[i] = ll->data[i+1];
     --ll->tail;
