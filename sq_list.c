@@ -6,13 +6,13 @@ struct sq_list* SqNewList (int len) {
         perror ("malloc");
         return NULL;
     }
-    new_ll->data = (int*)malloc(sizeof(SQ_ELEM_TYPE)*len);
+    new_ll->data = (SQ_ELEM_TYPE*)malloc(sizeof(SQ_ELEM_TYPE)*len);
     if (new_ll->data==NULL) {
         perror ("malloc");
         goto init_error;
     }
 
-    //put the tail and lenth in
+    //put the tail and length in
     new_ll->tail = 0;
     new_ll->len = len;
 
